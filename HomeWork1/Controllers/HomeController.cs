@@ -17,13 +17,7 @@ namespace HomeWork1.Controllers
         [HttpPost]
         public ActionResult Index(RecordLoginViewModel pagedata)
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
+            //沒有 DB , 暫時擱置
             return View();
         }
 
@@ -35,6 +29,13 @@ namespace HomeWork1.Controllers
         [ChildActionOnly]
         public ActionResult RecordTable()
         {
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
             return View();
         }
     }
