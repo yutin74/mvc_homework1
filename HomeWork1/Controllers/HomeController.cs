@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWork1.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,12 @@ namespace HomeWork1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Index(RecordLoginViewModel pagedata)
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,10 +27,14 @@ namespace HomeWork1.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult RecordTableRow()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        [ChildActionOnly]
+        public ActionResult RecordTable()
+        {
             return View();
         }
     }

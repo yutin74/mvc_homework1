@@ -1,0 +1,32 @@
+﻿@using HomeWork1.Models.ViewModels
+@{
+    Layout = null;
+    int Counter = 1;
+    List<RecordLoginViewModel> list = new List<RecordLoginViewModel>() {
+        new RecordLoginViewModel(Counter++, "支出", DateTime.Now, -2500),
+        new RecordLoginViewModel(Counter++, "支出", DateTime.Now, -3500),
+        new RecordLoginViewModel(Counter++, "收出", DateTime.Now, 4500),
+        new RecordLoginViewModel(Counter++, "支出", DateTime.Now, -1200)
+    };
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover" id="RecordList">
+            <thead>
+                <tr>
+                    <th class="text-center" width="50px">#</th>
+                    <th>類別</th>
+                    <th>日期</th>
+                    <th>金額</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in list)
+                {
+                    @Html.Partial("RecordTableRow", item);
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
