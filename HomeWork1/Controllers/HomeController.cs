@@ -21,13 +21,13 @@ namespace HomeWork1.Controllers
             return View();
         }
 
-        public ActionResult RecordTableRow()
+        [ChildActionOnly]
+        public ActionResult RecordTable()
         {
             return View();
         }
 
-        [ChildActionOnly]
-        public ActionResult RecordTable()
+        public ActionResult RecordTableRow()
         {
             return View();
         }

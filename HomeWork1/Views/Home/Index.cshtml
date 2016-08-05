@@ -7,8 +7,8 @@
         <div class="well">
             <form class="form-horizontal" method="post">
                 <div class="form-group">
-                    <label for="category" class="col-sm-2 control-label">類別</label>
-                    <div class="col-sm-10">
+                    <label for="category" class="col-md-2 control-label">類別</label>
+                    <div class="col-md-10">
                         <select id="Rec_type" name="Rec_type" class="form-control">
                             <option value="" selected>請選擇</option>
                             <option value="支出">支出</option>
@@ -17,25 +17,25 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="money" class="col-sm-2 control-label">金額</label>
-                    <div class="col-sm-10">
+                    <label for="money" class="col-md-2 control-label">金額</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="Rec_money" name="Rec_money" placeholder="金額">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="date" class="col-sm-2 control-label">日期</label>
-                    <div class="col-sm-10">
+                    <label for="date" class="col-md-2 control-label">日期</label>
+                    <div class="col-md-10">
                         <input type="text" class="form-control" id="Rec_date" name="Rec_date" placeholder="日期">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description" class="col-sm-2 control-label">備註</label>
-                    <div class="col-sm-10">
+                    <label for="description" class="col-md-2 control-label">備註</label>
+                    <div class="col-md-10">
                         <textarea class="form-control" id="Rec_note" name="Rec_note"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-md-offset-2 col-md-10">
                         <button type="submit" class="btn btn-default">送出 (C#)</button>
                         <button type="button" class="btn btn-default" onclick="Add()">送出 (JS)</button>
                     </div>
@@ -44,16 +44,19 @@
         </div>
     </div>
 </div>
-<script>
+
+@section scripts {
+<script type="text/javascript">
     function Add() {
         $('#RecordList').append(
                       "<tr>" +
                           "<td class='text-center'>" + ($('#RecordList tbody > tr').size() + 1) + "</td>" +
-                          "<td>" + $('#category').val() + "</td>" +
-                          "<td>" + $('#date').val() + "</td>" +
-                          "<td>" + $('#money').val() + "</td>" +
+                          "<td>" + $('#Rec_type').val() + "</td>" +
+                          "<td>" + $('#Rec_date').val() + "</td>" +
+                          "<td>" + $('#Rec_money').val() + "</td>" +
                       "</tr>");
     }
 </script>
+}
 
 @Html.Action("RecordTable")
